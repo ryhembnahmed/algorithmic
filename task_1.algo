@@ -1,0 +1,22 @@
+ALGORITHM word
+VAR
+    ch:CHAR;
+    voyelle: ARRAY_OF CHAR[6];
+    nb_voy:INTEGER;
+    nb_space:INTEGER;
+    nb_word:INTEGER;
+BEGIN
+    voyelle:={'a','e','u','i','y','o'}
+    nb_voy:=0;
+    nb_space:=0;
+    nb_word:=0;
+    do{
+        Read(ch);
+        IF (ch = ' ') THEN
+            nb_space:= nb_space +1;
+        ELSE_IF (ch in voyelle) THEN
+            nb_voy:= nb_voy + 1;
+        END_IF
+    }while(ch<>'.');
+    nb_word:=nb_space + 1;
+END

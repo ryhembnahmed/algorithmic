@@ -1,0 +1,30 @@
+ALGORITHM
+VAR
+    set1 : ARRAY_OF INTEGER[4];
+    set2 : ARRAY_OF INTEGER[5];
+    set3 : ARRAY_OF INTEGER[9];
+    sum : INTEGER;
+BEGIN
+    set1:={3, 1, 7, 9}
+    set2:={2, 4, 1, 9, 3}
+    sum:=0;
+    FOR j FROM 0 TO set3.length-1 STEP 1  DO
+        FOR i FROM 0 TO set1.length-1 STEP 1  DO
+            set3[j]:= set1[i];
+        END_FOR   
+        FOR i FROM 0 TO set2.length-1 STEP 1  DO
+            set3[j]:= set2[i];
+        END_FOR  
+    END_FOR
+    FOR i FROM 0 TO set3.length-1 STEP 1  DO
+        FOR j FROM 1 TO set3.length-1 STEP 1  DO
+            IF (set3[i]=set3[j]) THEN
+                set3[i]=0;
+                set3[j]=0;
+            END_IF
+        END_FOR
+    END_FOR
+    FOR i FROM 0 TO set3.length-1 STEP 1  DO
+        sum:= sum+ set3[i];
+    END_FOR
+END
